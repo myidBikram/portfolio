@@ -1,5 +1,6 @@
-let tl = gsap.timeline();
-tl.from(".line h1,  .line h2", {
+function loadingAnimation(){
+    let tl = gsap.timeline();
+tl.from(".line h1, .line h2, #loader_bottom h3", {
     y: 150,
     stagger: 0.25,
     duration: 0.6,
@@ -23,29 +24,47 @@ tl.from("#line1_counter", {
 })
 
 tl.to(".line h2", {
-    // animationName: anime,
-    // immediateRender: false,
     opacity: 1,
 })
 
 tl.to("#loader", {
-    delay: 4,
+    delay: 3.5,
     duration: 0.5,
     opacity: 0,
-    // onComplete: () => {
-    //     document.querySelector("#loader").style.display = "none";
-    // }
     ease: "power2",
     display: "none",
     
 })
 
 tl.from("#page1", {
-    immediateRender: false,
+    // immediateRender: false,
     delay: 0.2,
     y: "100vh",
     duration: 1,
     opacity: 0,
 })
+}
+
+function cursorAnimation(){
+    document.addEventListener("mousemove", function(dets){
+    // console.log('dets.clientX', dets);
+    gsap.to("#crsr",{
+        x: dets.x,
+        y: dets.y,
+    })
+    
+})
+
+Shery.makeMagnet("#nav h4" /* Element to target.*/, {
+    //Parameters are optional.
+    ease: "cubic-bezier(0.23, 1, 0.320, 1)",
+    duration: 1,
+  });
+}
+
+
+loadingAnimation();
+cursorAnimation();
+
 
 
