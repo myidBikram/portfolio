@@ -17,8 +17,8 @@ html {
     width: 2.3vw;
     border-radius: 50%;
     border: 1px solid #ffffff7d;
-    z-index: 9999;
-    position: fixed;
+    z-index: 99;
+    position: absolute;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
 }
@@ -167,15 +167,35 @@ html {
     /* background-color: red; */
     margin-left: 28vw;
     width: 70%;
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 
 }
 .hero:nth-child(2){
     margin-top: 18vh;
 }
-.hero h1{
+.hero h1, .hero h2, .hero h3{
     font-size: 7.5vw;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 7.5vw;
 
 }
+span{
+    font-size: 7vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 7.5vw;
+}
+.hero h2, .hero h3{
+    border-bottom: .5vw solid #ffffff;
+    padding-bottom: .3vw;
+}
+
+.hero h2:hover, .hero h3:hover{
+    -webkit-text-stroke: 1px #ffffff;
+    color: transparent;
+    font-weight: 400;
+    border-bottom: .3vw solid #ffffff00;}
